@@ -1,0 +1,283 @@
+<%- include("../includes/head.ejs"); %>
+
+<link rel="stylesheet" href="/style.css">
+
+<body class="bg-black text-white">
+  <style type="text/css">
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0; /* Optionally, you can set margin to control the spacing */
+    }
+
+    #idBtns {
+      border: 1px solid white;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      padding: none;
+    }
+
+    #contFirst {
+      margin-bottom: 100px;
+    }
+
+    #first {
+      border-top: 1px solid white; 
+      border-bottom: 1px solid white;
+      text-align: center;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    #second {
+      text-align: center;
+    }
+
+    #csBtn {
+      text-align: right;
+    }
+
+    #csBtn:hover {
+      color: black;
+    }
+
+    #exampleFormControlInput1 {
+      width: 300px;
+      padding: 0;
+      height: 40px;
+      outline: none;
+      border: none;
+      text-indent: 20px;
+    }
+
+    .form-control::placeholder {
+      font-size: 14px;
+    }
+
+    #exampleFormControlInput1:focus {
+      outline: none;
+      border: none;
+    }
+
+    #cartBox1 {
+      padding: 30px;
+    }
+
+    #cartBox2 {
+      margin-left: 10px;
+    }
+
+    #checkout {
+      border-radius: 25px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 10px 30px;
+      margin-left: 10px;
+    }
+
+    #cartBox4 {
+      margin-left: 20px;
+    }
+
+    #cartBox5 {
+      padding: 10px 50px 10px 30px;
+    }
+
+    #third {
+      display: none;
+    }
+
+    @media (max-width: 993px) {
+      #first {
+        display: none;
+      }
+
+      #second {
+        // border: 1px solid white;
+        flex-direction: column;
+        border-top: 1px solid white; 
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+        text-align: left;
+        border-radius: 0 20px 20px 0;
+      }
+
+      #first p {
+        padding: 1%;
+        width: 100%;
+        // border: 1px solid red;
+        text-align: left;
+      }
+
+      #second div {
+        padding: 1%;
+        width: 100%;
+        // border: 1px solid red;
+        text-align: left;
+      }
+
+      #image1Box {
+        display: none;
+      }
+
+      // #image1 {
+      //   width: 30px;
+      //   height: 30px;
+      // }
+
+      #csBtn {
+        text-align: center;
+      }
+
+      #third {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #decBtn {
+        padding-left: 80px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      #contFirst {
+        margin-left: 10px;
+      }
+
+      #checkout {
+        width: 100%;
+        letter-spacing: 0px;
+        padding: 10px 3px;
+        margin: 0px;
+      }
+
+      #cartBox1 {
+        padding: 20px 5px;
+      }
+
+      #cartBox2 {
+        margin: 0px;
+      }
+
+      #cartBox3 {
+        flex-direction: column;
+      }
+
+      #cartBox4 {
+        margin-top: 30px;
+        margin-left: 0px;
+      }
+
+      #cartBox5 {
+        padding: 0px;
+      }
+
+      #decBtn {
+        padding-left: 10px;
+      }
+    }
+  </style>
+
+  <header class="header1">
+    <%- include('../includes/navbar.ejs') %>
+  </header>
+
+  <header class="header-to-hide" style="position: sticky; top: 0; background-color: black; z-index: 1000;">
+    <%- include('../includes/navbar2.ejs') %>
+  </header>
+
+  <div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+  </div>
+
+  <section>
+    <div class="container-fluid bg-light p-3" style="color: black;">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <ul class="mb-2 d-flex" style="list-style-type: none;" id="navbar">
+            <li class="nav-item ms-3">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="#">Orders</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" id="contFirst">
+      <div class="row">
+        <div class="col">
+          Your Orders
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+      <div class="position-relative">
+        <div class="position-fixed bottom-0 start-0" id="button-container">
+          <form action="/v1/language" method="post">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <button class="en-button" type="submit" name="lang" value="en">
+                <div class="button-content" id="enBtn">
+                  <img src="/usFlag.png" width="13" height="13" />
+                  English
+                </div>
+              </button>
+              <button class="ru-button" type="submit" name="lang" value="fr">
+                <div class="button-content" id="frBtn">
+                  <img src="/frFlag.png" width="13" height="13" />
+                  Français
+                </div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <%- include('../includes/newsletter.ejs') %>
+  </section>
+
+  <section>
+    <%- include('../includes/table.ejs') %>
+  </section>
+
+  <section>
+    <%- include('../includes/footer.ejs') %>
+  </section>
+
+  <script>
+    const lang = '<%= JSON.stringify(lang) %>'; 
+  </script>
+
+  <script src="/script.js"></script>
+
+  <script>
+    const data = <%- JSON.stringify(products) %>;
+  </script>
+
+  <script type="text/javascript">
+    // JavaScript to hide the loading spinner after page load
+    // window.addEventListener('load', function () {
+    //   console.log("hii...");
+    //   // Get the loading spinner element
+    //   const loadingSpinner = document.getElementById('loadingSpinner');
+        
+    //   // Hide the loading spinner
+    //   loadingSpinner.style.display = 'none';
+    // });
+  </script>
+
+  <%- include("../includes/end.ejs"); %>
+</body>

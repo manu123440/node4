@@ -1,0 +1,98 @@
+    <nav class="navbar navbar-expand-lg bg-black text-white">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+          <a class="navbar-brand" href="/">
+            <img src="/h4kigImg.jpg" id="logo" alt="<%= lang.nav_t %>" width="150" height="150">
+          </a>
+
+          <div class="collapse navbar-collapse mb-2" id="navbarSupportedContent" style="color: white;">
+            <div class="col d-flex flex-column justify-content-center">
+              <div class="search-container">
+                <div class="dropdown">
+                  <form method="GET" class="d-flex" role="search" id="searchForm">
+                    <select class="course-select" id="category" name="category">
+                      <option value="" disabled selected><%= lang.nav_ac %></option>
+                      <option value="Comptes"><%= lang.nav_ac1 %></option>
+                      <option value="Formations"><%= lang.nav_ac2 %></option>
+                      <option value="Services"><%= lang.nav_ac3 %></option>
+                      <!-- Add more course options here -->
+                    </select>
+                    <input class="form-control p-2 search-input" name="name" id="searchAll" type="search" placeholder="<%= lang.nav_ac_ph %>" aria-label="Search">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <% if(isAuth) { %>
+            <div class="ms-1 me-1">
+              <a href="/v1/cart" type="button" class="btn me-3" id="proBtn">
+                <img src="/cart1.png" alt="cart" id="logo3" width="45" height="40" />
+                <span class="pro-count blue"><%= cart %></span>
+              </a>
+              <a href="/v1/logout" type="button" class="btn me-3">
+                <img src="/logout.png" alt="login" id="logo4" width="45" height="40" />
+                <!-- <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #edeff2;"></i> -->
+              </a>
+            </div>
+          <% } else { %>
+            <div class="ms-1 me-1">
+              <a href="/v1/cart" type="button" class="btn me-3" id="proBtn">
+                <img src="/cart1.png" alt="cart" id="logo3" width="45" height="40" />
+                <span class="pro-count blue"><%= cart %></span>
+              </a>
+              <a href="/v1/login" type="button" class="btn me-3">
+                <img src="/user1.png" alt="login" id="logo4" width="45" height="40" />
+              </a>
+            </div>
+          <% } %>
+
+        <button class="navbar-toggler btn-close-white border" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start bg-black text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="display: none;">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white;">Offcanvas</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body text-white">
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mt-2">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="width: 100%;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  OUR PRODUCTS
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="width: 100%;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ORDER NOW
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="width: 100%;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  VISIT US
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="/products">Products</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </nav>

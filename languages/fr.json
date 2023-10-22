@@ -1,0 +1,78 @@
+{
+	"smws": {
+        
+			"category": "kategoriya",
+			"subCategory": "podkat",
+            "lang": "fr"
+      
+	},
+	"nav_t": "Connexion - The Dark Community, for all the world !",
+    "nav_ac": "Toutes les catégories",
+    "nav_ac1": "Comptes",
+    "nav_ac2": "Formations",
+    "nav_ac3": "Services",
+    "nav_ac_ph": "Rechercher des produits...",
+    "nav_bc": " Parcourir les catégories",
+    "nav_bc1": "Comptes",
+    "nav_bc2": "Formations",
+    "nav_bc3": "Services",
+    "nav_h_1": "Accueil",
+    "nav_h_2": "Boutique",
+    "nav_h_3": "Streaming",
+    "nav_h_4": "Services",
+    "nav_h_5": "FAQ",
+    "nav_h_6": "Contactez-nous",
+
+	"l_l": "Connexion",
+    "l_ea": "Adresse e-mail",
+    "l_eap": "Veuillez saisir votre adresse e-mail",
+    "l_p": "Mot de passe",
+    "l_pp": "Veuillez saisir votre mot de passe",
+    "l_rem": "Souvenez-vous de moi",
+    "l_fp": "Mot de passe oublié?",
+    "l_sub": "CONNEXION",
+    "l_reg": "Vous n'avez pas de compte ?",
+    "l_reg_link": "Créé en un",
+
+    "l_news_1": "S'inscrire au Newsletter",
+    "l_news_2": "...se tenir au courant des dernières offres !",
+    "l_news_3": "Saisissez votre email...",
+    "l_news_4": "S'abonner",
+
+    "l_table_1": "Categories", 
+    "l_table_1_1": "Comptes", 
+    "l_table_1_2": "Formations", 
+    "l_table_1_3": "Services",
+
+    "l_table_2": "Information", 
+    "l_table_2_1": "Contactez-nous", 
+    "l_table_2_2": "FAQ", 
+
+    "l_table_3": "Paiements",
+    "l_table_3_1": "Passerelles de paiement sécurisées et anonyme.",
+
+    "l_footer": "Tous droits réservés.",
+
+    "r_r": "Enregistrer",
+    "r_tu": "Telegram username",
+    "r_tuph": "Veuillez saisir votre nom d'utilisateur",
+    "r_ea": "Adresse e-mail",
+    "r_eaph": "Veuillez saisir votre adresse e-mail",
+    "r_p": "Mot de passe",
+    "r_pph": "Veuillez saisir votre mot de passe",
+    "r_cp": "Confirmation du mot de passe",
+    "r_cpph": "Confirmation de votre mot de passe",
+    "r_tAm": "J'accepte les conditions et la politique.",
+    "r_btnTxt": "Enregistrer",
+    "r_log": "Vous avez déjà un compte?",
+    "r_log_link": "Connexion",
+
+    "h_aBtn": "COMMENCER",
+
+	"hello": "Это главная страница на 'RU'",
+	"categoryPage": "Это страница категории на  'RU'",
+	"subCategory": "Это страница ПОДкатегории на  'RU'",
+	"mainText": "Перейти на страницу категории",
+	"categoryText": "Перейти на страницу ПОДкатегории",
+	"backHome": "Перейти на  главную страницу"
+}

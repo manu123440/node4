@@ -1,0 +1,142 @@
+<%- include("../includes/head.ejs"); %>
+<link rel="stylesheet" href="/style.css">
+
+<body class="bg-black text-white">
+
+	<header>
+		<%- include('../includes/header.ejs') %>
+	</header>
+
+	<div class="loading-spinner" id="loadingSpinner">
+    	<div class="spinner"></div>
+  	</div>
+
+	<section>
+		<div class="container" style="margin-top: 90px;">
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-12 col-md-3 col-lg-3"></div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+					<h1>Now Payments</h1>
+					<h4>Total: <%= total %>€</h4>
+					<h6>Email: <%= email %></h6>
+					<h5>Select a payment method:</h5>
+					<form action="/v1/pay" method="POST" id="form">
+						<input type="hidden" name="price" value="<%= total %>">
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="btc" id="btc">
+						  <label class="form-check-label text-uppercase" for="btc">
+						  	btc
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="eth" id="eth">
+						  <label class="form-check-label text-uppercase" for="eth">
+						  	eth
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="usdt" id="usdt">
+						  <label class="form-check-label text-uppercase" for="usdt">
+						  	usdt
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="ada" id="ada" checked>
+						  <label class="form-check-label text-uppercase" for="ada">
+						  	ada
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="bnb" id="bnb">
+						  <label class="form-check-label text-uppercase" for="bnb">
+						  	bnb
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="xrp" id="xrp">
+						  <label class="form-check-label text-uppercase" for="xrp">
+						  	xrp
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="sol" id="sol">
+						  <label class="form-check-label text-uppercase" for="sol">
+						  	sol
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="dot" id="dot">
+						  <label class="form-check-label text-uppercase" for="dot">
+						  	dot
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="doge" id="doge">
+						  <label class="form-check-label text-uppercase" for="doge">
+						  	doge
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="crypto" value="ltc" id="ltc">
+						  <label class="form-check-label text-uppercase" for="ltc">
+						  	ltc
+						  </label>
+						</div>
+						<button type="submit" id="btn" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+				<div class="col-12 col-sm-12 col-md-3 col-lg-3"></div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+            // Get the loading spinner element
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            
+            // Hide the loading spinner
+            loadingSpinner.style.display = 'none';
+        });
+        
+    	// globalThis.document.addEventListener('DOMContentLoaded', () => {
+    	// 	const btn = globalThis.document.getElementById("btn");
+    	// 	const form = globalThis.document.getElementById("form");
+
+    	// 	// Get all radio buttons with the specified value attribute
+		//     const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+		//     // radioButtons.forEach(i => {
+		//     // 	i.addEventListener("click", function() {
+		//     // 		console.log(i);
+		//     // 		radioButtons.forEach((rb) => {
+		//     // 			rb.checked = false;
+		// 	// 		});
+
+		// 	// 		// Check the clicked radio button
+		// 	// 		this.setAttribute("checked", "true");
+		//     // 	})
+		//     // })
+
+    	// 	form.addEventListener("submit", (e) => {
+    	// 		e.preventDefault();
+		        
+		//         // Check if at least one radio button is checked
+		//         for (const radioButton of radioButtons) {
+		//         	console.log(radioButton)
+		//             if (radioButton.checked) {
+		//                 // return true; // Allow form submission
+		//                 form.setAttribute('action', "/v1/pay");
+		//                 form.submit();
+		//             }
+		//         }
+        
+		//         // If none are checked, display an alert and prevent form submission
+		//         // alert('Please select at least one option.');
+		//         return false; // Prevent form submission
+    	// 	})
+    	// })
+	</script>
+
+  <%- include("../includes/end.ejs"); %>
+</body>
