@@ -68,40 +68,40 @@ let registerFunction = (item, item2, item3) => {
   return options;
 };
 
-function qwerty() {
-	const fonts = ["cursive", "sans-serif", "serif", "monospace"];
+// function qwerty() {
+// 	const fonts = ["cursive", "sans-serif", "serif", "monospace"];
 
-	let captchaValue = '';
+// 	let captchaValue = '';
 
-	function generateCaptcha() {
-		let value = btoa(Math.random()*1000000000);
-		value = value.substr(0, 5+Math.random()*5);
-		captchaValue = value;
-		return captchaValue;
-	}
+// 	function generateCaptcha() {
+// 		let value = btoa(Math.random()*1000000000);
+// 		value = value.substr(0, 5+Math.random()*5);
+// 		captchaValue = value;
+// 		return captchaValue;
+// 	}
 
-	function setCaptcha() {
-		const abcd = captchaValue.split("").map((char) => {
-			const rotate = -20 + Math.trunc(Math.random()*30);
-			const font = Math.trunc(Math.random() * fonts.length);
+// 	function setCaptcha() {
+// 		const abcd = captchaValue.split("").map((char) => {
+// 			const rotate = -20 + Math.trunc(Math.random()*30);
+// 			const font = Math.trunc(Math.random() * fonts.length);
 
-			// console.log(rotate, font, char);
-			return {
-				rotate: rotate,
-				font: fonts[font],
-				char: char
-			}
-		});
+// 			// console.log(rotate, font, char);
+// 			return {
+// 				rotate: rotate,
+// 				font: fonts[font],
+// 				char: char
+// 			}
+// 		});
 
-		// console.log(abcd);
-		return abcd;
-	}
+// 		// console.log(abcd);
+// 		return abcd;
+// 	}
 
-	const x = generateCaptcha();
-	const y = setCaptcha();
+// 	const x = generateCaptcha();
+// 	const y = setCaptcha();
 
-	return {x,y};
-}
+// 	return {x,y};
+// }
 
 router.post('/language', async (req, res, next) =>{
 	const { lang } = req.body;
@@ -137,7 +137,7 @@ router.post('/language', async (req, res, next) =>{
 });
 
 router.get('/login', async (req, res, next) => {
-	const {x,y} = qwerty();
+	// const {x,y} = qwerty();
 
 	// console.log(x,y);
 
@@ -155,8 +155,10 @@ router.get('/login', async (req, res, next) => {
 		{ 
 			title: 'Login',
 			lang: req.lang,
-			data1: x,
-			data2: y,
+			// data1: x,
+			// data2: y,
+			data1: [],
+			data2: [],
 	    errorMessage: message,
 			isAuth: false,
 			cart: '0',
@@ -213,10 +215,10 @@ router.post('/login',
   			.matches(/(?=.*?[0-9])/).withMessage('Password must have at least one Number')
   			.matches(/(?=.*?[#?!@$%^&*-])/).withMessage('Password must have at least one special character')
   			.not().matches(/^$|\s+/).withMessage('White space not allowed'),
-  	body('captcha')
-  		.trim()
-  		.notEmpty()
-  		.withMessage('Captcha required')
+  	// body('captcha')
+  	// 	.trim()
+  	// 	.notEmpty()
+  	// 	.withMessage('Captcha required')
 	],
 	async (req, res, next) => {
 		const { email, password } = req.body;
@@ -224,7 +226,7 @@ router.post('/login',
 		// console.log(req.body);
 
 		try {
-			const {x,y} = qwerty();
+			// const {x,y} = qwerty();
 
 			const error = validationResult(req);
 
@@ -235,8 +237,10 @@ router.post('/login',
 						title: 'Login',
 			      lang: req.lang,
 			      errorMessage: error.array()[0].msg,
-			      data1: x,
-						data2: y,
+			      // data1: x,
+						// data2: y,
+						data1: [],
+						data2: [],
 						isAuth: false,
 						cart: '0',
 			      oldInput: {
