@@ -127,52 +127,10 @@
   </section>
 
   <script>
-    const data3 = '<%= JSON.stringify(data2) %>';
-    const data4 = '<%= data1 %>';
     const lang = '<%= JSON.stringify(lang) %>'; 
   </script>
 
   <script src="/script.js"></script>
-
-  <script>
-    const data = JSON.parse(data3.replace(/&#34;/g, '"'));
-    const data5 = data4;
-
-    console.log(data5);
-    
-    const form = globalThis.document.getElementById("form");
-
-    let html = data.map(i => {
-      return `<span
-        style="
-          transform: rotate(${i.rotate}deg);
-          font-family: ${i.font};
-        "
-        >${i.char}
-      </span>`
-    }).join("");
-
-    globalThis.document.querySelector(".captcha .preview").innerHTML = html;
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const captchaInput = globalThis.document.getElementById('captcha-input');
-
-      if (captchaInput.value === '') {
-        alert('Please enter Captcha');
-        return;
-      }
-      else if (captchaInput.value !== data5) {
-        captchaInput.value = '';
-        alert('Invalid Captcha, try again...');
-        return;
-      }
-
-      else {
-        form.submit();
-      }
-    })
-  </script>
 
   <%- include("../includes/end.ejs"); %>
 </body>
